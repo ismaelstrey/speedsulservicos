@@ -49,8 +49,8 @@ export default function RoadMap() {
                 <div className="timeline-end mb-10">
                     <span className="font-mono italic text-3xl text-zinc-800 font-extrabolds">4°</span>
                     <div className="text-lg font-black">Seleção e Contato</div>
-                    - Após encontrar um profissional que atenda às suas necessidades, o usuário pode entrar em contato com ele através da plataforma. Isso pode ser feito através de um botão de "Solicitar Serviço" ou "Enviar Mensagem".
-                    - O usuário pode enviar uma mensagem ao profissional para discutir detalhes adicionais do serviço, como disponibilidade, preço final, prazos, etc.      </div>
+                    - Após encontrar um profissional que atenda às suas necessidades, o usuário pode entrar em contato com ele através da plataforma. Isso pode ser feito através de um botão de Solicitar Serviço ou Enviar Mensagem.
+                    - O usuário pode enviar uma mensagem ao profissional para discutir detalhes adicionais do serviço, como disponibilidade, preço final, prazos, etc.</div>
                 <hr />
             </li>
             <li>

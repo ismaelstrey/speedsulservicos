@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function Card() {
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <figure><Image src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
             <div className="card-body">
                 <div className='flex justify-end'>
                     <div className="rating">
@@ -27,3 +28,5 @@ export default function Card() {
         </div>
     )
 }
+
+
