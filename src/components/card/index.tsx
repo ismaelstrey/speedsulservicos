@@ -22,7 +22,7 @@ export default function Card({
     } else return "";
   }
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-xl hover:cursor-pointer hover:scale-105 hover:border border-slate-400">
       <figure>
         <Image
           src={avatar}
