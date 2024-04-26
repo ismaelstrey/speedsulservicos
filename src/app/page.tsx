@@ -1,3 +1,4 @@
+import Categories from "@/components/categories";
 import CountServices from "@/components/countServices";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
@@ -13,6 +14,7 @@ export default function Home() {
       <CountServices />
       <ListServices />
       {/* <RoadMap /> */}
+      <Categories />
       <Footer />
     </main>
   );

@@ -1,6 +1,7 @@
 export const categoriasServicos = [
   {
     categoria: "Serviços de Construção e Reforma",
+    icon: "icons/construcao.svg",
     subcategorias: [
       "Pedreiro",
       "Encanador",
@@ -14,6 +15,7 @@ export const categoriasServicos = [
   },
   {
     categoria: "Serviços de Beleza e Estética",
+    icon: "icons/beleza.svg",
     subcategorias: [
       "Cabeleireiro",
       "Manicure",
@@ -26,6 +28,7 @@ export const categoriasServicos = [
   },
   {
     categoria: "Serviços de Saúde e Bem-Estar",
+    icon: "icons/saude.svg",
     subcategorias: [
       "Nutricionista",
       "Personal Trainer",
@@ -37,7 +40,8 @@ export const categoriasServicos = [
     ],
   },
   {
-    categoria: "Serviços de Tecnologia e Informática",
+    categoria: "Serviços de cnologia e Informática",
+    icon: "icons/tech.svg",
     subcategorias: [
       "Desenvolvedor Web",
       "Designer Gráfico",
@@ -50,6 +54,20 @@ export const categoriasServicos = [
   },
   {
     categoria: "Serviços de Consultoria e Assessoria",
+    icon: "icons/consultoria.svg",
+    subcategorias: [
+      "Consultor Financeiro",
+      "Consultor de Marketing",
+      "Consultor Jurídico",
+      "Consultor de Recursos Humanos",
+      "Assessor Contábil",
+      "Assessor de Imprensa",
+      "Assessor de Eventos",
+    ],
+  },
+  {
+    categoria: "Alimantação",
+    icon: "icons/alimento.svg",
     subcategorias: [
       "Consultor Financeiro",
       "Consultor de Marketing",
