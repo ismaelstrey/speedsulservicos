@@ -7,7 +7,7 @@ import RoadMap from "@/components/roadmap";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col scroll-smooth">
       <Navbar />
       <Hero />
       <CountServices />

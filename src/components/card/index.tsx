@@ -1,17 +1,37 @@
 import Image from "next/image";
 import React from "react";
 
-export default function Card() {
+interface Props {
+  avatar?: string;
+  profissao?: string;
+  descricao?: string;
+  especialidades?: string[];
+  star: number;
+}
+
+export default function Card({
+  avatar = "/images/eletricista.jpg",
+  profissao = "Profissao",
+  descricao = "Eperiencia em marcenaria a 8 anos",
+  especialidades = ["marceneiro", "pintor"],
+  star = 1,
+}: Props) {
+  function checkStar(star: number, value: number) {
+    if (star > value) {
+      return "defaultChecked";
+    } else return "";
+  }
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
         <Image
-          src="/images/eletricista.jpg"
+          src={avatar}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={true}
-          alt="Shoes"
+          alt={profissao}
           width={900}
           height={900}
+          className="bg-white"
         />
       </figure>
       <div className="card-body">
@@ -26,7 +46,6 @@ export default function Card() {
               type="radio"
               name="rating-2"
               className="mask mask-star-2 bg-orange-400"
-              defaultChecked
             />
             <input
               type="radio"
@@ -46,13 +65,16 @@ export default function Card() {
           </div>
         </div>
         <h2 className="card-title">
-          Shoes!
-          <div className="badge badge-secondary">NEW</div>
+          {profissao}
+          <div className="badge badge-secondary">PRO</div>
         </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <p>{descricao}</p>
         <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+          {especialidades.map((espe, key) => (
+            <div key={key} className="badge badge-outline">
+              {espe}
+            </div>
+          ))}
         </div>
       </div>
     </div>
