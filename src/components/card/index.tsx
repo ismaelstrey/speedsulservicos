@@ -34,7 +34,8 @@ export default function Card({
           className="bg-white"
         />
       </figure>
-      <div className="card-body">
+
+      <div className="card-body bg-slate-50">
         <div className="flex justify-end">
           <div className="rating">
             <input
@@ -71,7 +72,7 @@ export default function Card({
         <p>{descricao}</p>
         <div className="card-actions justify-end">
           {especialidades.map((espe, key) => (
-            <div key={key} className="badge badge-outline">
+            <div key={key} className="badge badge-outline bg-white">
               {espe}
             </div>
           ))}
