@@ -12,13 +12,13 @@ export default function CountServices() {
 
             <div className="stat place-items-center">
                 <div className="stat-title">Usuarios</div>
-                <div className="stat-value text-secondary">4,200</div>
+                <div className="stat-value text-secondary">4.2</div>
                 <div className="stat-desc text-secondary">↗︎ 40 (2%)</div>
             </div>
 
             <div className="stat place-items-center">
                 <div className="stat-title">Atendidos</div>
-                <div className="stat-value">1,200</div>
+                <div className="stat-value">1,2</div>
                 <div className="stat-desc">↘︎ 90 (14%)</div>
             </div>
 

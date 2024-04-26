@@ -3,8 +3,8 @@ import React from "react";
 export default function Hero() {
   return (
     <div
-      className="hero min-h-screen bg-slate-400 mt-16"
-      style={{ backgroundImage: "url(/images/banner2.svg)" }}
+      className="hero min-h-screen bg-slate-400 mt-16 bg-hero-mb md:bg-hero bg-cover"
+    // style={{ backgroundImage: "url(/images/banner2.svg)" }}
     >
       <div className="hero-content"></div>
       <div className="hero-content text-center text-yellow-500">

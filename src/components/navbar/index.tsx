@@ -8,11 +8,8 @@ export default function Navbar() {
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          <li>
+          <li className="hidden md:block">
             <a>Produtos</a>
-          </li>
-          <li>
-            <a>Serviços</a>
           </li>
           <li>
             <details>
