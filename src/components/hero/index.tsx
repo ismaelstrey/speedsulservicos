@@ -3,7 +3,7 @@ import React from "react";
 export default function Hero() {
   return (
     <div
-      className="hero min-h-screen bg-slate-400"
+      className="hero min-h-screen bg-slate-400 mt-16"
       style={{ backgroundImage: "url(/images/banner2.svg)" }}
     >
       <div className="hero-content"></div>

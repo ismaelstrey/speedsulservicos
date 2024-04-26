@@ -22,7 +22,7 @@ export default function Card({
     } else return "";
   }
   return (
-    <div className="card w-96 bg-base-100 shadow-xl hover:cursor-pointer hover:scale-105 hover:border border-slate-400">
+    <div className="card w-96 bg-base-100 shadow-xl hover:cursor-pointer rounded-lg hover:scale-105 hover:border border-slate-400">
       <figure>
         <Image
           src={avatar}
@@ -35,7 +35,7 @@ export default function Card({
         />
       </figure>
 
-      <div className="card-body bg-slate-50">
+      <div className="card-body bg-slate-50 rounded-b-lg">
         <div className="flex justify-end">
           <div className="rating">
             <input

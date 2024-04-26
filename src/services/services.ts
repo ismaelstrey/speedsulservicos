@@ -140,7 +140,7 @@ export const userServico = {
       ],
     },
     {
-      avatar: "/images/dev5.svg",
+      avatar: "/images/dev3.svg",
       descricao: "Profissional liberal",
       star: 5,
       nome: "Pedro Lima",
@@ -236,6 +236,31 @@ export const userServico = {
           projeto: "Estratégia de Email Marketing",
           cliente: "Startup de E-commerce",
           resultado: "Aumento nas taxas de conversão",
+        },
+      ],
+    },
+    {
+      avatar: "/images/dev8.svg",
+      descricao: "Profissional liberal",
+      star: 5,
+      nome: "Maria Oliveira",
+      profissao: "Web Designer",
+      experiencia: "8 anos",
+      especialidades: ["UI/UX Design", "Responsive Design"],
+      contato: {
+        email: "maria.designer@email.com",
+        telefone: "(11) 98765-4321",
+      },
+      portfolio: [
+        {
+          projeto: "Website Corporativo",
+          cliente: "Empresa ABC",
+          resultado: "Aumento de tráfego",
+        },
+        {
+          projeto: "Redesign de Aplicativo",
+          cliente: "Startup XYZ",
+          resultado: "Melhoria na usabilidade",
         },
       ],
     },
