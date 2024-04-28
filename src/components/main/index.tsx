@@ -1,18 +1,16 @@
 "use client";
 import { themaList } from "@/services/services";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { IoIosColorPalette } from "react-icons/io";
 interface Props {
   children: ReactNode;
 }
-
 export default function Main({ children }: Props) {
   const [theme, setTheme] = useState<string>("light");
   const [menu, setMenu] = useState<boolean>(false);
-  let stored = localStorage.getItem("theme");
+  let stored = window.localStorage.getItem("theme");
   function trocaThema(e: React.ChangeEvent<HTMLInputElement>) {
-    localStorage.setItem("theme", e.target.value);
-
+    window.localStorage.setItem("theme", e.target.value);
     setTheme(stored || "light");
     setMenu(false);
   }

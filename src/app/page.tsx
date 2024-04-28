@@ -5,7 +5,6 @@ import Hero from "@/components/hero";
 import ListServices from "@/components/listServices";
 import Main from "@/components/main";
 import Navbar from "@/components/navbar";
-import RoadMap from "@/components/roadmap";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <CountServices />
       <ListServices />
-      {/* <RoadMap /> */}
       <Categories />
       <Footer />
     </Main>
