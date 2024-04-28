@@ -1,27 +1,40 @@
 "use client";
 import { themaList } from "@/services/services";
-import React, { ReactNode, useState } from "react";
+import {
+  handleGetLocalStorage,
+  handleSetLocalStorage,
+} from "@/utils/localStorage";
+import React, { ReactNode, useEffect, useState } from "react";
 import { IoIosColorPalette } from "react-icons/io";
 interface Props {
   children: ReactNode;
 }
 export default function Main({ children }: Props) {
-  const [theme, setTheme] = useState<string>("light");
+  const [theme, setTheme] = useState<string>("");
   const [menu, setMenu] = useState<boolean>(false);
-  // @ts-ignore
-  let stored = window.localStorage.getItem("theme");
 
   function trocaThema(e: React.ChangeEvent<HTMLInputElement>) {
-    // @ts-ignore
-    window.localStorage.setItem("theme", e.target.value);
+    const stored = e.target.value;
+    handleSetLocalStorage(stored);
     setTheme(stored || "light");
     setMenu(false);
   }
 
+  useEffect(() => {
+    const savedValue = window.localStorage.getItem("theme");
+    savedValue && setTheme(savedValue);
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  console.log(theme);
+
   return (
     <main
       className="flex bg-base-300 min-h-screen flex-col scroll-smooth"
-      data-theme={stored ? stored : theme}
+      data-theme={theme}
     >
       <span className="bg-base fixed bottom-3 left-3 z-50">
         <IoIosColorPalette
@@ -32,10 +45,6 @@ export default function Main({ children }: Props) {
         {menu && (
           <div className="join join-vertical">
             {themaList.map((value, key) => (
-              // <option value={value} key={key}>
-              //   {value}
-              // </option>
-
               <input
                 key={key}
                 type="radio"
