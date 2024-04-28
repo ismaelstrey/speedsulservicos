@@ -8,8 +8,11 @@ interface Props {
 export default function Main({ children }: Props) {
   const [theme, setTheme] = useState<string>("light");
   const [menu, setMenu] = useState<boolean>(false);
+  // @ts-ignore
   let stored = window.localStorage.getItem("theme");
+
   function trocaThema(e: React.ChangeEvent<HTMLInputElement>) {
+    // @ts-ignore
     window.localStorage.setItem("theme", e.target.value);
     setTheme(stored || "light");
     setMenu(false);
