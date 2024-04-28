@@ -15,7 +15,7 @@ export default function ItemCategorie({
   return (
     <div>
       <Image
-        className=" hover:scale-105 hover:cursor-pointer"
+        className=" hover:scale-105 hover:cursor-pointer w-40 h-28"
         src={src}
         width={width}
         height={height}

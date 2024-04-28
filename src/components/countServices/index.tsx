@@ -10,7 +10,7 @@ export default function CountServices() {
       </div>
 
       <div className="stat place-items-center">
-        <div className="stat-title">Usuarios</div>
+        <div className="stat-title">Usuários</div>
         <div className="stat-value text-secondary">4.2</div>
         <div className="stat-desc text-secondary">↗︎ 40 (2%)</div>
       </div>

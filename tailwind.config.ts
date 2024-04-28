@@ -50,6 +50,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         hero: "url('/images/banner2.svg')",
         "hero-mb": "url('/images/mb_banner2.svg')",
+        personagem: "url('/images/personagem.svg')",
       },
     },
   },

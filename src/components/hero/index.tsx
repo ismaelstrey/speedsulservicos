@@ -3,9 +3,10 @@ import React from "react";
 export default function Hero() {
   return (
     <div
-      className="hero min-h-4.5 md:min-h-screen bg-base-100 mt-16 bg-hero-mb md:bg-hero bg-cover"
+      className="hero min-h-4.5 md:min-h-screen h-h10 sm:h-3/4 bg-base-100 mt-16 bg-hero bg-cover"
       // style={{ backgroundImage: "url(/images/banner2.svg)" }}
     >
+      <span className=" bg-personagem relative min-w-[60%] md:w-[30%] sm:w-screen sm:h-screen bottom-0 h-3/4 bg-cover"></span>
       <div className="hero-content"></div>
       <div className="hero-content text-center">
         <div className="max-w-md">
