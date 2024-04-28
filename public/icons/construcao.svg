@@ -1,54 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 27.4.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="800px" height="800px" viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16;}
-	.st2{fill:#FFFFFF;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16;}
-	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:24;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16;}
+	.st1{fill:none;stroke:#000000;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16;}
 </style>
 <g>
-	<polygon class="st0" points="344.5,126.7 344.5,691.5 717.1,691.5 717.1,310.8 687.6,296.2 	"/>
-	<polygon class="st1" points="346.7,691.5 719.3,691.5 719.3,310.8 346.7,126.7 	"/>
-	<polygon class="st2" points="580.7,427.2 681.3,427.2 680.1,339.5 580.7,292.6 	"/>
-	<polygon class="st2" points="389.9,427.2 556.9,427.2 556.9,278.9 389.9,195.5 	"/>
-	<rect x="612.7" y="472.2" class="st2" width="68.6" height="62.7"/>
-	<rect x="502" y="472.2" class="st2" width="68.6" height="62.7"/>
-	<rect x="391.3" y="472.2" class="st2" width="68.6" height="62.7"/>
-	<rect x="612.7" y="569.3" class="st2" width="68.6" height="62.7"/>
-	<rect x="502" y="569.3" class="st2" width="68.6" height="62.7"/>
-	<rect x="391.3" y="569.3" class="st2" width="68.6" height="62.7"/>
-	<rect x="80.7" y="108.5" class="st0" width="381.8" height="613.6"/>
-	<rect x="234" y="142.6" class="st2" width="75" height="76.2"/>
-	<rect x="347.1" y="142.6" class="st2" width="75" height="76.2"/>
-	<rect x="120.9" y="142.6" class="st2" width="75" height="76.2"/>
-	<rect x="234" y="249.5" class="st2" width="75" height="76.2"/>
-	<rect x="347.1" y="249.5" class="st2" width="75" height="76.2"/>
-	<rect x="120.9" y="249.5" class="st2" width="75" height="76.2"/>
-	<rect x="234" y="356.3" class="st2" width="75" height="76.2"/>
-	<rect x="347.1" y="356.3" class="st2" width="75" height="76.2"/>
-	<rect x="120.9" y="356.3" class="st2" width="75" height="76.2"/>
-	<rect x="347.1" y="463.1" class="st2" width="75" height="76.2"/>
-	<rect x="234" y="463.1" class="st2" width="75" height="76.2"/>
-	<rect x="120.9" y="463.1" class="st2" width="75" height="76.2"/>
-	<rect x="234" y="569.8" class="st2" width="75" height="76.2"/>
-	<rect x="347.1" y="569.8" class="st2" width="75" height="76.2"/>
-	<rect x="120.9" y="569.8" class="st2" width="75" height="76.2"/>
-	<path class="st0" d="M237.2,573.2h68.5c1.8,0,3.2,1.4,3.2,3.2v132.3c0,1.8-1.4,3.2-3.2,3.2h-68.6c-1.8,0-3.2-1.4-3.2-3.2V576.4
-		C234,574.7,235.5,573.2,237.2,573.2z"/>
-	<path class="st3" d="M298.8,583.5v118.2h-54.5V583.5H298.8 M305.8,563h-68.6c-7.5,0-13.4,6-13.4,13.4l0,0v132.3
-		c0,7.5,6,13.4,13.4,13.4l0,0h68.6c7.5,0,13.4-6,13.4-13.4l0,0V576.4C319.2,569.1,313.2,563,305.8,563L305.8,563L305.8,563z"/>
-	<rect x="80.7" y="77.9" class="st1" width="381.8" height="644.2"/>
-	<polygon class="st0" points="719.3,157.4 719.3,722.1 346.7,722.1 346.7,341.4 376.3,326.9 	"/>
-	<polygon class="st1" points="717.2,722.1 344.5,722.1 344.5,341.4 717.2,157.5 	"/>
-	<polygon class="st2" points="483.2,457.9 382.5,457.9 383.7,370.2 483.2,323.3 	"/>
-	<polygon class="st1" points="673.9,457.9 506.9,457.9 506.9,309.5 673.9,226.2 	"/>
-	<rect x="382.5" y="502.9" class="st2" width="68.6" height="62.7"/>
-	<rect x="493.2" y="502.9" class="st2" width="68.6" height="62.7"/>
-	<rect x="603.9" y="502.9" class="st2" width="68.6" height="62.7"/>
-	<rect x="382.5" y="600.1" class="st2" width="68.6" height="62.7"/>
-	<rect x="493.2" y="600.1" class="st2" width="68.6" height="62.7"/>
-	<rect x="603.9" y="600.1" class="st2" width="68.6" height="62.7"/>
+	<rect x="196.5" y="172.5" class="st0" width="75" height="76.2"/>
+	<rect x="309.6" y="172.5" class="st0" width="75" height="76.2"/>
+	<rect x="83.4" y="172.5" class="st0" width="75" height="76.2"/>
+	<rect x="196.5" y="279.4" class="st0" width="75" height="76.2"/>
+	<rect x="309.6" y="279.4" class="st0" width="75" height="76.2"/>
+	<rect x="83.4" y="279.4" class="st0" width="75" height="76.2"/>
+	<rect x="196.5" y="386.2" class="st0" width="75" height="76.2"/>
+	<rect x="309.6" y="386.2" class="st0" width="75" height="76.2"/>
+	<rect x="83.4" y="386.2" class="st0" width="75" height="76.2"/>
+	<rect x="309.6" y="493" class="st0" width="75" height="76.2"/>
+	<rect x="196.5" y="493" class="st0" width="75" height="76.2"/>
+	<rect x="83.4" y="493" class="st0" width="75" height="76.2"/>
+	<rect x="196.5" y="599.7" class="st0" width="75" height="152.3"/>
+	<rect x="309.6" y="599.7" class="st0" width="75" height="76.2"/>
+	<rect x="83.4" y="599.7" class="st0" width="75" height="76.2"/>
+	<rect x="43.2" y="107.8" class="st0" width="381.8" height="644.2"/>
+</g>
+<g>
+	<rect x="588.3" y="168.7" class="st1" width="58.3" height="59.3"/>
+	<rect x="676.3" y="168.7" class="st1" width="58.3" height="59.3"/>
+	<rect x="500.4" y="168.7" class="st1" width="58.3" height="59.3"/>
+	<rect x="588.3" y="251.8" class="st1" width="58.3" height="59.3"/>
+	<rect x="676.3" y="251.8" class="st1" width="58.3" height="59.3"/>
+	<rect x="500.4" y="251.8" class="st1" width="58.3" height="59.3"/>
+	<rect x="588.3" y="334.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="676.3" y="334.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="500.4" y="334.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="676.3" y="417.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="588.3" y="417.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="500.4" y="417.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="588.3" y="500.9" class="st1" width="58.3" height="118.4"/>
+	<rect x="676.3" y="500.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="500.4" y="500.9" class="st1" width="58.3" height="59.3"/>
+	<rect x="469.1" y="118.4" class="st1" width="296.9" height="501"/>
 </g>
 </svg>

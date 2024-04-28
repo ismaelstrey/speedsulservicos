@@ -3,13 +3,15 @@ import React from "react";
 export default function Hero() {
   return (
     <div
-      className="hero min-h-screen bg-slate-400 mt-16 bg-hero-mb md:bg-hero bg-cover"
-    // style={{ backgroundImage: "url(/images/banner2.svg)" }}
+      className="hero min-h-4.5 md:min-h-screen bg-base-100 mt-16 bg-hero-mb md:bg-hero bg-cover"
+      // style={{ backgroundImage: "url(/images/banner2.svg)" }}
     >
       <div className="hero-content"></div>
-      <div className="hero-content text-center text-yellow-500">
+      <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">O Que voçê precisa?</h1>
+          <h1 className="mb-5 text-2xl md:text-5xl text-white font-bold">
+            O Que voçê precisa?
+          </h1>
           <p className="mb-5"></p>
           <label className="input input-bordered flex items-center gap-2">
             <input type="text" className="grow" placeholder="Ex: Eletricista" />
