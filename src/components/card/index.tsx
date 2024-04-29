@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface Props {
@@ -66,7 +67,7 @@ export default function Card({
           </div>
         </div>
         <h2 className="card-title">
-          {profissao}
+          <Link href="pages"> {profissao}</Link>
           <div className="badge badge-secondary">PRO</div>
         </h2>
         <p>{descricao}</p>

@@ -1,10 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
   return (
     <div className="navbar bg-base-100 fixed z-50">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl">SpeedSul</a>
+        <Link href="/" className="btn btn-ghost text-xl>">SpeedSul</Link>
+
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
