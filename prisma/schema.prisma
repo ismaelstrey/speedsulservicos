@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Define o modelo para a tabela Empresa
+model Empresa {
+  id                    Int                   @id @default(autoincrement())
+  abertura              DateTime
+  situacao              String
+  tipo                  String
+  nome                  String
+  porte                 String
+  naturezaJuridica      String                @map("natureza_juridica")
+  atividadePrincipal    AtividadePrincipal[]
+  qsa                   QSA[]
+  logradouro            String
+  numero                String
+  municipio             String
+  bairro                String
+  uf                    String
+  cep                   String
+  email                 String
+  telefone              String
+  dataSituacao          DateTime              @map("data_situacao")
+  cnpj                  String                @unique
+  ultimaAtualizacao     DateTime              @map("ultima_atualizacao")
+  status                String
+  fantasia              String?
+  complemento           String?
+  efr                   String?
+  motivoSituacao        String?               @map("motivo_situacao")
+  situacaoEspecial      String?               @map("situacao_especial")
+  dataSituacaoEspecial  DateTime?             @map("data_situacao_especial")
+  atividadesSecundarias AtividadeSecundaria[]
+  capitalSocial         String
+  extra                 String
+  Billing               Billing[]
+}
+
+// Define o modelo para a tabela AtividadePrincipal
+model AtividadePrincipal {
+  id        Int     @id @default(autoincrement())
+  code      String
+  text      String
+  empresa   Empresa @relation(fields: [empresaId], references: [id])
+  empresaId Int
+}
+
+// Define o modelo para a tabela QSA (Quadro de Sócios e Administradores)
+model QSA {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  qual      String
+  empresa   Empresa @relation(fields: [empresaId], references: [id])
+  empresaId Int
+}
+
+// Define o modelo para a tabela AtividadeSecundaria
+model AtividadeSecundaria {
+  id        Int     @id @default(autoincrement())
+  code      String
+  text      String
+  empresa   Empresa @relation(fields: [empresaId], references: [id])
+  empresaId Int
+}
+
+// Define o modelo para a tabela Billing
+model Billing {
+  id        Int     @id @default(autoincrement())
+  free      Boolean
+  database  Boolean
+  empresa   Empresa @relation(fields: [empresaId], references: [id])
+  empresaId Int
+}
