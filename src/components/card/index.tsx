@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 interface Props {
+  id?: string;
   avatar?: string;
   profissao?: string;
   descricao?: string;
@@ -15,6 +16,7 @@ export default function Card({
   profissao = "Profissao",
   descricao = "Eperiencia em marcenaria a 8 anos",
   especialidades = ["marceneiro", "pintor"],
+  id,
   star = 1,
 }: Props) {
   function checkStar(star: number, value: number) {
@@ -23,7 +25,7 @@ export default function Card({
     } else return "";
   }
   return (
-    <div className="card w-96 bg-base-100 shadow-xl hover:cursor-pointer rounded-lg hover:scale-105 hover:border border-slate-400">
+    <div className="card w-96 bg-base-100 shadow-xl hover:cursor-pointer rounded-lg hover:scale-105 hover:border border-slate-400 transition ease-in-out delay-150">
       <figure>
         <Image
           src={avatar}
@@ -67,7 +69,7 @@ export default function Card({
           </div>
         </div>
         <h2 className="card-title">
-          <Link href="pages"> {profissao}</Link>
+          <Link href={`pages/service&id=${id}`}> {profissao}</Link>
           <div className="badge badge-secondary">PRO</div>
         </h2>
         <p>{descricao}</p>

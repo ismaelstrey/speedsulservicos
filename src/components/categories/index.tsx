@@ -1,19 +1,13 @@
-import { categoriasServicos } from "@/services/services";
 import React from "react";
-import ItemCategorie from "./itemCategorie";
+import ItensIcons from "./itemIcons";
 
 export default function Categories() {
   return (
     <div className="h-36 bg-neutral-content my-10 flex justify-center items-center gap-8">
-      {categoriasServicos.map((cat, key) => (
-        <ItemCategorie
-          key={key}
-          src={cat.icon}
-          height={150}
-          width={120}
-          title={cat.categoria}
-        />
-      ))}
+      <ItensIcons
+        className="fill-base-100 hover:scale-125 hover:cursor-pointer hover:fill-neutral transition ease-in-out delay-150"
+        size={80}
+      />
     </div>
   );
 }

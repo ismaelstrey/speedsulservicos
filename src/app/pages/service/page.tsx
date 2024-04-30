@@ -8,7 +8,7 @@ export default function PageSevice() {
     <Main>
       <Navbar />
       {/* <Hero /> */}
-      <div className="min-h-96"></div>
+      <div className="flex h-full flex-1">Service</div>
       <Footer />
     </Main>
   );

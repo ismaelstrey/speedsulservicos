@@ -33,14 +33,14 @@ export default function Main({ children }: Props) {
 
   return (
     <main
-      className="flex bg-base-300 min-h-screen flex-col scroll-smooth"
+      className="flex bg-base-300 min-h-screen flex-col scroll-smooth transition-all"
       data-theme={theme}
     >
       <span className="bg-base fixed bottom-3 left-3 z-50">
         <IoIosColorPalette
           className="hover:cursor-pointer hover:scale-125 opacity-40 hover:opacity-100"
           onClick={() => setMenu(!menu)}
-          size={50}
+          size={25}
         />
         {menu && (
           <div className="join join-vertical">

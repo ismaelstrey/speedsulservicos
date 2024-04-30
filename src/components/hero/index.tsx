@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="hero-content"></div>
       <div className="hero-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 text-2xl md:text-5xl text-white font-bold">
+          <h1 className="mb-5 text-2xl md:text-5xl font-bold">
             O Que voçê precisa?
           </h1>
           <p className="mb-5"></p>

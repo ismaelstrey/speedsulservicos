@@ -14,6 +14,7 @@ export default function Home() {
       <CountServices />
       <ListServices />
       <Categories />
+      <ListServices />
       <Footer />
     </Main>
   );
