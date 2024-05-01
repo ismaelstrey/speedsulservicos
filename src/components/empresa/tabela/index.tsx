@@ -14,6 +14,7 @@ export default function EmpresaTablela({ empresa }: Props) {
             <th>STATUS</th>
             <th>NOME</th>
             <th>CONTATO</th>
+            <th>MUNICIPIO</th>
             <th>CNPJ</th>
           </tr>
         </thead>
@@ -21,8 +22,9 @@ export default function EmpresaTablela({ empresa }: Props) {
           {empresa.map((empre, key) => (
             <tr key={key}>
               <th>{empre?.status}</th>
-              <td>{empre?.fantasia}</td>
+              <td>{empre?.nome}</td>
               <td>{empre?.telefone}</td>
+              <td>{empre?.municipio}</td>
               <td>{empre?.cnpj}</td>
             </tr>
           ))}
