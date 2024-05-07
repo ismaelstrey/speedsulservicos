@@ -1,6 +1,5 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
-import { consultarAPI } from "@/services/getCnpj";
 
 export async function GET(request: Request) {
   try {
@@ -43,7 +42,7 @@ export async function GET(request: Request) {
 }
 export async function POST(request: Request) {
   const dataEmpresa = await request.json();
-
+  // console.log({ cnpJ: { dataEmpresa } });
   const data = await prisma.empresa.create({
     data: {
       abertura: dataEmpresa.abertura,

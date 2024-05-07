@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  IconEmail,
-  IconKey,
-  IconSearch,
-  IconUser,
-  IconUsers,
-} from "../@ui/icons";
+import { IconEmail, IconKey, IconUser, IconUsers } from "../@ui/icons";
 
 export default function FormNew() {
   return (

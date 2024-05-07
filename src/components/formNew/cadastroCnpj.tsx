@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { IconSearch } from "../@ui/icons";
 import { formatCNPJ } from "@/utils/funcoes";
-import { Empresa } from "@/@types/empresa";
-import { getApiCnpj, getApiCnpjAll } from "@/services/getCnpj";
+import { getApiCnpjAll, getApiCnpjESalva } from "@/services/getCnpj";
 import EmpresaTablela from "../empresa/tabela";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 export default function CadastroCnpj() {
@@ -22,7 +21,7 @@ export default function CadastroCnpj() {
   });
   const mutation = useMutation({
     mutationFn: (cnpj: string) => {
-      return getApiCnpj(cnpj);
+      return getApiCnpjESalva(cnpj);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["empresa"] });
