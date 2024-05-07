@@ -6,7 +6,7 @@ export default function PageSevice() {
     <Main>
       <Navbar />
       {/* <Hero /> */}
-      <div className="flex h-full flex-1">Service</div>
+      <div className="flex h-full flex-1 mt-20">Service</div>
       {/* <Footer /> */}
     </Main>
   );
