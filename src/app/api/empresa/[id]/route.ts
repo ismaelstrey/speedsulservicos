@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { formataCNPJ } from "@/utils/funcoes";
 import { NextResponse } from "next/server";
 
 export async function GET(
@@ -6,8 +7,10 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
+  const cnpj = formataCNPJ(id);
   try {
-    const consulta = await prisma.empresa.findUnique({ where: { cnpj: id } });
+    const consulta = await prisma.empresa.findFirst({ where: { cnpj: cnpj } });
+    console.log(consulta);
     return NextResponse.json(consulta);
   } catch (error) {
     console.log(error);

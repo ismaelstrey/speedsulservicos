@@ -1,4 +1,6 @@
 import { Empresa } from "@/@types/empresa";
+import { formatCNPJ } from "@/utils/funcoes";
+import Link from "next/link";
 import React from "react";
 interface Props {
   empresa: Empresa[];
@@ -25,7 +27,13 @@ export default function EmpresaTablela({ empresa }: Props) {
               <td>{empre?.nome}</td>
               <td>{empre?.telefone}</td>
               <td>{empre?.municipio}</td>
-              <td>{empre?.cnpj}</td>
+              <td>
+                <Link
+                  href={`/pages/cadastro/empresa/${formatCNPJ(empre?.cnpj)}`}
+                >
+                  {empre?.cnpj}
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

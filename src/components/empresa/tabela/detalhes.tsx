@@ -11,11 +11,17 @@ export default function EmpresaTablelaDetalhes({ empresa }: Props) {
         {/* head */}
         <thead>
           <tr>
-            <th>STATUS</th>
-            <th>NOME</th>
-            <th>CONTATO</th>
+            {empresa?.status && <th>STATUS</th>}
+            {empresa?.nome && <th>NOME</th>}
+            {empresa?.telefone && <th>TELEFONE</th>}
             <th>MUNICIPIO</th>
-            <th>CNPJ</th>
+            <th>ABERTURA</th>
+            <th>BAIRRO</th>
+            {empresa?.capital_social && <th>CAPITAL SOCIAL</th>}
+            {empresa?.cep && <th>CEP</th>}
+            {empresa?.complemento && <th>COMPLEMENTO</th>}
+            {empresa?.data_situacao && <th>DATA SITUAÇAO ESPECIAL</th>}
+            {empresa?.natureza_juridica && <th>NATUREZA JURIDICA</th>}
           </tr>
         </thead>
         <tbody>
@@ -25,27 +31,17 @@ export default function EmpresaTablelaDetalhes({ empresa }: Props) {
             <td>{empresa?.telefone}</td>
             <td>{empresa?.municipio}</td>
             <td>{empresa?.abertura}</td>
-            <td>
-              {empresa?.atividade_principal.map((res, key) => (
-                <div key={key}>
-                  <span>{res?.code}</span>
-                  <span>{res?.text}</span>
-                </div>
-              ))}
-            </td>
             <td>{empresa?.bairro}</td>
-            <td>{empresa?.billing.database}</td>
-            <td>{empresa?.capital_social}</td>
+            {empresa?.capital_social && <td>empresa?.capital_social </td>}
             <td>{empresa?.cep}</td>
             <td>{empresa?.complemento}</td>
-            <td>{empresa?.data_situacao}</td>
+            {empresa?.data_situacao && <td>{empresa?.data_situacao}</td>}
             <td>{empresa?.data_situacao_especial}</td>
             <td>{empresa?.efr}</td>
             <td>{empresa?.email}</td>
             <td>{empresa?.fantasia}</td>
             <td>{empresa?.logradouro}</td>
             <td>{empresa?.motivo_situacao}</td>
-            <td>{empresa?.municipio}</td>
             <td>{empresa?.natureza_juridica}</td>
           </tr>
         </tbody>
