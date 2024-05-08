@@ -81,3 +81,85 @@ model Billing {
   empresa   Empresa @relation(fields: [empresaId], references: [id])
   empresaId Int
 }
+
+// schema.prisma
+
+// Modelo para o tipo de serviço
+model ServiceType {
+  id      Int       @id @default(autoincrement())
+  name    String
+  Service Service[]
+}
+
+// Modelo para o usuário
+model User {
+  id        Int        @id @default(autoincrement())
+  username  String     @unique
+  firstName String
+  lastName  String
+  bio       String?
+  avatar    String?
+  email     String     @unique
+  password  String
+  service   Service    @relation(fields: [serviceId], references: [id])
+  serviceId Int
+  MainUser  MainUser[]
+}
+
+// Modelo para o serviço oferecido
+model Service {
+  id          Int         @id @default(autoincrement())
+  title       String
+  subtitle    String
+  description String
+  job         String
+  status      Boolean
+  type        ServiceType @relation(fields: [typeId], references: [id])
+  typeId      Int
+  views       Int         @default(0)
+  link        String
+  image       String
+  icon        String
+  rate        Float
+  city        String
+  bairro      String
+  address     String
+  obs         String
+  number      String
+  User        User[]
+}
+
+// Modelo para o contato do usuário
+model Contact {
+  id       Int        @id @default(autoincrement())
+  email    String
+  telefone String
+  MainUser MainUser[]
+}
+
+// Modelo para o portfólio do usuário
+model Portfolio {
+  id         Int       @id @default(autoincrement())
+  projeto    String
+  cliente    String
+  resultado  String
+  MainUser   MainUser? @relation(fields: [mainUserId], references: [id])
+  mainUserId Int?
+}
+
+// Modelo para o usuário principal
+model MainUser {
+  id             Int         @id @default(autoincrement())
+  avatar         String
+  descricao      String
+  star           Int
+  nome           String
+  profissao      String
+  experiencia    String
+  especialidades String[]
+  user           User        @relation(fields: [userId], references: [id])
+  contato        Contact     @relation(fields: [contactId], references: [id])
+  portfolio      Portfolio[]
+  userId         Int
+  contactId      Int
+}

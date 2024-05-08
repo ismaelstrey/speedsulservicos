@@ -10,7 +10,6 @@ export async function GET(
   const cnpj = formataCNPJ(id);
   try {
     const consulta = await prisma.empresa.findFirst({ where: { cnpj: cnpj } });
-    console.log(consulta);
     return NextResponse.json(consulta);
   } catch (error) {
     console.log(error);

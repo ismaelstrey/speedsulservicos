@@ -1,0 +1,61 @@
+{
+    "id": "01",
+    "avatar": "/images/dev8.svg",
+    "descricao": "Profissional liberal",
+    " star": 5,
+    "nome": "Maria Oliveira",
+    "profissao": "Web Designer",
+    "experiencia": "8 anos",
+    "especialidades": [
+        "UI/UX Design",
+        "Responsive Design"
+    ],
+    "user": {
+        "id": 0,
+        "username": "fernando123",
+        "firstName": "fernando",
+        "lastName": "Guimaroes",
+        "bio": " trabalho com eletrica a 20 anos",
+        "avatar": "./avatar.png",
+        "email": "teste@email.com",
+        "password": "123456",
+        "service": {
+            " id ": "1",
+            " title": "Manutenção de computadores",
+            "subtitle": "Realizo todo o trabalho de manutenção de computares para seu estabelecimento",
+            "description": "Trabalho com fardware, resdes , notebooks empressoaras e perifericos",
+            "job": "Tecnico de informatica",
+            " status": true,
+            "type": {
+                "id": 0,
+                "name": "premium"
+            },
+            "views": 5,
+            "link": "https://google.com",
+            "image": "/image/banner.svg",
+            " icon ": "/image/icon.svg",
+            " rate": "5",
+            " city": "Igrejinha",
+            " bairro": "centro",
+            "address": "Rua joaquim silva",
+            "obs": "Predio segundo piso",
+            "number": "12"
+        }
+    },
+    "contato": {
+        "email": "maria.designer@email.com",
+        "telefone": "(11) 98765-4321"
+    },
+    "portfolio": [
+        {
+            "projeto": "Website Corporativo",
+            "cliente": "Empresa ABC",
+            "resultado": "Aumento de tráfego"
+        },
+        {
+            "projeto": "Redesign de Aplicativo",
+            "cliente": "Startup XYZ",
+            "resultado": "Melhoria na usabilidade"
+        }
+    ]
+}

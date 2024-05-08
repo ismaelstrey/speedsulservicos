@@ -4,6 +4,7 @@ import { formatCNPJ } from "@/utils/funcoes";
 import { getApiCnpjAll, getApiCnpjESalva } from "@/services/getCnpj";
 import EmpresaTablela from "../empresa/tabela";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { BiPlusCircle } from "react-icons/bi";
 export default function CadastroCnpj() {
   const [cnpj, setCnpj] = useState<string>("");
 
@@ -31,7 +32,7 @@ export default function CadastroCnpj() {
 
   return (
     <div className="flex flex-col gap-3 items-center justify-center flex-1 w-ful mt-20">
-      <h5>Cadastro CNPJ: {cnpj}</h5>
+      <h5>Cadastro CNPJ: {cnpj} {cnpjValido && "Enter para salvar"}</h5>
       <form onSubmit={handleSubmitForm}>
         <label className="input min-w-52 input-bordered flex items-center">
           <input
@@ -43,8 +44,8 @@ export default function CadastroCnpj() {
             onChange={(e) => setCnpj(e.target.value)}
           />
           {cnpjValido && (
-            <button onSubmit={() => {}}>
-              <IconSearch />
+            <button onSubmit={() => { }}>
+              <BiPlusCircle title="Adicionar" />
             </button>
           )}
         </label>
@@ -57,7 +58,7 @@ export default function CadastroCnpj() {
           <div className="skeleton h-4 w-full"></div>
         </div>
       )}
-      {data && <EmpresaTablela empresa={data} />}
+      {data && !isLoading && <EmpresaTablela empresa={data} />}
     </div>
   );
 }
