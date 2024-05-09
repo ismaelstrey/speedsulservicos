@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../card";
 import { userServico } from "@/services/services";
+import { JobListing } from "@/@types/services";
+import { getAllUserServices } from "@/services/apiUserServices";
 
 export default function ListServices() {
+  const [userService, setuserService] = useState<JobListing[]>([]);
+
+  useEffect(() => {
+    getAllUserServices().then((res) => setuserService(res));
+  }, []);
   return (
     <div className="flex gap-4 flex-wrap justify-center">
-      {userServico.usuarios.map((user, key) => (
+      {userService.map((user, key) => (
         <Card
-          avatar={user.avatar}
-          star={user.star}
-          descricao={user.descricao}
-          especialidades={user.especialidades}
-          profissao={user.profissao}
+          image={user.image}
+          rate={user.rate}
+          description={user.description}
+          skils={user.skils}
+          job={user.job}
           key={key}
         />
       ))}

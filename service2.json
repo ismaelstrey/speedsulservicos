@@ -1,15 +1,3 @@
-POST https://api.economapas.com.br/v2/leads/cnpjs/total
-
-###
-
-DELETE  http://localhost:3000/api/services/2
-
-
-###
-
-POST http://localhost:3000/api/services
-Content-Type: application/json
-
 {
   "title": "Manutenção de computadores",
   "subtitle": "Realizo todo o trabalho de manutenção de computares para seu estabelecimento",
@@ -18,11 +6,24 @@ Content-Type: application/json
   "status": true,
   "views": 5,
   "link": "https://google.com",
-  "image": "/images/dev7.svg",
-  "icon": "/image/icon.svg",
+  "image": "/image/banner.svg",
+  "icon ": "/image/icon.svg",
+  "rate": "5",
   "city": "Igrejinha",
   "bairro": "centro",
   "address": "Rua joaquim silva",
   "obs": "Predio segundo piso",
-  "number": "12" 
+  "number": "12",
+  "type": {
+    "name": "premium"
+  },
+  "user": {
+    "username": "fernando123",
+    "firstName": "fernando",
+    "lastName": "Guimaroes",
+    "bio": " trabalho com eletrica a 20 anos",
+    "avatar": "./avatar.png",
+    "email": "teste@email.com",
+    "password": "123456"
+  }
 }

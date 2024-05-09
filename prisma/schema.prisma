@@ -82,13 +82,18 @@ model Billing {
   empresaId Int
 }
 
-// schema.prisma
-
 // Modelo para o tipo de serviço
 model ServiceType {
   id      Int       @id @default(autoincrement())
   name    String
   Service Service[]
+}
+
+// Modelo para o tipo de serviço
+model Especialidades {
+  id       Int        @id @default(autoincrement())
+  name     String
+  MainUser MainUser[]
 }
 
 // Modelo para o usuário
@@ -108,24 +113,24 @@ model User {
 
 // Modelo para o serviço oferecido
 model Service {
-  id          Int         @id @default(autoincrement())
-  title       String
-  subtitle    String
-  description String
-  job         String
-  status      Boolean
-  type        ServiceType @relation(fields: [typeId], references: [id])
-  typeId      Int
-  views       Int         @default(0)
-  link        String
-  image       String
-  icon        String
-  rate        Float
-  city        String
-  bairro      String
-  address     String
-  obs         String
-  number      String
+  id          Int          @id @default(autoincrement())
+  title       String?
+  subtitle    String?
+  description String?
+  job         String?
+  status      Boolean      @default(true)
+  type        ServiceType? @relation(fields: [typeId], references: [id])
+  typeId      Int?
+  views       Int          @default(0)
+  link        String?
+  image       String?
+  icon        String?
+  rate        Float        @default(0)
+  city        String?
+  bairro      String?
+  address     String?
+  obs         String?
+  number      String?
   User        User[]
 }
 
@@ -149,17 +154,18 @@ model Portfolio {
 
 // Modelo para o usuário principal
 model MainUser {
-  id             Int         @id @default(autoincrement())
-  avatar         String
-  descricao      String
-  star           Int
-  nome           String
-  profissao      String
-  experiencia    String
-  especialidades String[]
-  user           User        @relation(fields: [userId], references: [id])
-  contato        Contact     @relation(fields: [contactId], references: [id])
-  portfolio      Portfolio[]
-  userId         Int
-  contactId      Int
+  id               Int            @id @default(autoincrement())
+  avatar           String?
+  descricao        String?
+  star             Int?
+  nome             String?
+  profissao        String?
+  experiencia      String?
+  especialidades   Especialidades @relation(fields: [especialidadesId], references: [id])
+  user             User?          @relation(fields: [userId], references: [id])
+  contato          Contact?       @relation(fields: [contactId], references: [id])
+  portfolio        Portfolio[]
+  userId           Int
+  contactId        Int
+  especialidadesId Int
 }
