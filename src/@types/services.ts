@@ -14,7 +14,7 @@ export interface JobListing {
   address?: string;
   obs?: string;
   number?: string;
-  rate?: string;
+  rate?: number;
   skils?: string[];
   type?: string;
 }

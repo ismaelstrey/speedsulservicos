@@ -16,3 +16,7 @@ export const addServices = async (services: JobListing): Promise<JobListing> => 
   return respData.data;
 };
 export const deleteService = async (id: number) => await axios.delete(`/api/services/${id}`);
+export const updateService = async (id: number, data: JobListing): Promise<JobListing> => {
+  const response = await axios.patch(`/api/services/${id}`, data)
+  return response.data
+};

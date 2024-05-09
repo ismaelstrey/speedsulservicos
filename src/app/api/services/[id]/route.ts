@@ -28,3 +28,23 @@ export async function POST(request: Request) {
   });
   return NextResponse.json({ data });
 }
+export async function PATCH(
+  request: Request,
+  { params }: { params: { id: number } }
+) {
+  const { id } = params;
+  const dataService = await request.json();
+  try {
+    const data = await prisma.service.update({
+      where: {
+        id: Number(id),
+      }, data: {
+        ...dataService
+      }
+    });
+    return NextResponse.json(data);
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(error);
+  }
+}

@@ -5,6 +5,11 @@ POST https://api.economapas.com.br/v2/leads/cnpjs/total
 DELETE  http://localhost:3000/api/services/2
 
 
+
+###
+
+GET http://localhost:3000/api/services
+Content-Type: application/json
 ###
 
 POST http://localhost:3000/api/services
@@ -25,4 +30,12 @@ Content-Type: application/json
   "address": "Rua joaquim silva",
   "obs": "Predio segundo piso",
   "number": "12" 
+}
+
+###
+PATCH http://localhost:3000/api/services/49
+Content-Type: application/json
+
+{
+  "rate":4
 }
