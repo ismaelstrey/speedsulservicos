@@ -6,6 +6,10 @@ export const getAllUserServices = async (): Promise<JobListing[]> => {
 
   return respData.data;
 };
+export const getTotalServices = async (): Promise<number> => {
+  let respData = await axios.get("/api/services/total");
+  return respData.data;
+};
 export const addServices = async (services: JobListing): Promise<JobListing> => {
   let respData = await axios.post("/api/services", services);
 

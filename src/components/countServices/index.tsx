@@ -1,11 +1,14 @@
 import React from "react";
+interface Props {
+  services: number
+}
 
-export default function CountServices() {
+export default function CountServices({ services = 0 }: Props) {
   return (
     <div className="stats shadow my-4 bg-base-100">
       <div className="stat place-items-center">
-        <div className="stat-title">Proficionais</div>
-        <div className="stat-value">257</div>
+        <div className="stat-title">Serviços</div>
+        <div className="stat-value">{services}</div>
         <div className="stat-desc">Desde maio de 2024</div>
       </div>
 
