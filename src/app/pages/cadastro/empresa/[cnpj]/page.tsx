@@ -2,7 +2,7 @@
 import { Empresa } from "@/@types/empresa";
 import EmpresaTablelaDetalhes from "@/components/empresa/tabela/detalhes";
 import { getApiCnpj } from "@/services/getCnpj";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { TfiBackLeft } from "react-icons/tfi";
 
@@ -12,13 +12,11 @@ export default function Page({ params }: { params: { cnpj: string } }) {
   useEffect(() => {
     getApiCnpj(params.cnpj).then((res) => setEmpresa(res));
   }, []);
-
-
+  const router = useRouter()
 
   return (
     <div className="flex-1 mt-32">
-      <Link className="flex w-full justify-end" href={`/pages/cadastro/cnpj`}><TfiBackLeft size={30} className="mr-4" /></Link>
-
+      <button className="flex w-full justify-end" type="button" onClick={() => router.back()}><TfiBackLeft size={30} className="mr-4" /></button>
       {empresa ? (
         <EmpresaTablelaDetalhes empresa={empresa} />
       ) : (

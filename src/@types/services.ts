@@ -16,4 +16,7 @@ export interface JobListing {
   number?: string;
   rate?: string;
   skils?: string[];
+  type?: string;
 }
+
+

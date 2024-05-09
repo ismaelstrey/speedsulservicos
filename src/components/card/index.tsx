@@ -1,16 +1,10 @@
 import { JobListing } from "@/@types/services";
+import { deleteService } from "@/services/apiUserServices";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaTrash } from "react-icons/fa";
 
-interface Props {
-  id?: string;
-  avatar?: string;
-  profissao?: string;
-  descricao?: string;
-  especialidades?: string[];
-  star: number;
-}
 
 export default function Card({
   image = "/images/eletricista.jpg",
@@ -18,6 +12,7 @@ export default function Card({
   description = "Eperiencia em marcenaria a 8 anos",
   skils = ["marceneiro", "pintor"],
   rate = "1",
+  type,
   id,
 }: JobListing) {
   function checkStar(star: number, value: number) {
@@ -71,7 +66,7 @@ export default function Card({
         </div>
         <h2 className="card-title">
           <Link href={`pages/service&id=${id}`}> {job}</Link>
-          <div className="badge badge-secondary">PRO</div>
+          {type && <div className="badge badge-secondary">{type}</div>}
         </h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
@@ -81,6 +76,8 @@ export default function Card({
             </div>
           ))}
         </div>
+        {id && <button onClick={() => deleteService(id)}> <FaTrash className="hover:text-red-600 hover:scale-125" title={`Deletar: ${job}`} /></button>
+        }
       </div>
     </div>
   );

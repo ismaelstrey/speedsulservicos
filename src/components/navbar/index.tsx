@@ -15,6 +15,9 @@ export default function Navbar() {
             <a>Produtos</a>
           </li>
           <li>
+            <Link href="/pages/service/cadastro">Cadastro</Link>
+          </li>
+          <li>
             <details>
               <summary>Empresa</summary>
               <ul className="p-2 bg-base-100 rounded-t-none">
@@ -33,6 +36,7 @@ export default function Navbar() {
                 <li>
                   <Link href="/pages/cadastro/cnpj">Cadastro CNPJ</Link>
                 </li>
+
               </ul>
             </details>
           </li>

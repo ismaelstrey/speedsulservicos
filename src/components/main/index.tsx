@@ -29,7 +29,6 @@ export default function Main({ children }: Props) {
     window.localStorage.setItem("theme", theme);
   }, [theme]);
 
-  console.log(theme);
 
   return (
     <QueryClientProvider client={queryClient}>
