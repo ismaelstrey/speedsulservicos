@@ -21,14 +21,14 @@ export const deleteService = async (id: number) =>
   await axios.delete(`/api/services/${id}`);
 
 interface PropsService {
-  data: JobListing;
+  rate: number;
   id: number;
 }
-export const updateService = async ({
+export const updateServiceRate = async ({
   id,
-  data,
+  rate,
 }: PropsService): Promise<JobListing> => {
-  id;
-  const response = await axios.patch(`/api/services/${id}`, data);
+  const dataService = { rate: rate }
+  const response = await axios.patch(`/api/services/${id}`, dataService);
   return response.data;
 };

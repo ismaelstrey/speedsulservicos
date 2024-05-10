@@ -1,19 +1,16 @@
 "use client";
-import { JobListing } from "@/@types/services";
 import Categories from "@/components/categories";
 import CountServices from "@/components/countServices";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import ListServices from "@/components/listServices";
 import Loading from "@/components/loading";
-import Main from "@/components/main";
 import Navbar from "@/components/navbar";
 import {
   getAllUserServices,
   getTotalServices,
-  updateService,
 } from "@/services/apiUserServices";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
 export default function Home() {
