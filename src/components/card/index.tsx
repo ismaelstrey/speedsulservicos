@@ -6,6 +6,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { FaTrash } from "react-icons/fa";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import ButtomDeleteCard from "./_buttom";
 
 
 export default function Card({
@@ -92,17 +93,7 @@ export default function Card({
             </div>
           ))}
         </div>
-        {id && (
-          <button
-            onClick={() => deleteService(id).then(() => router.refresh())}
-          >
-            {" "}
-            <FaTrash
-              className="hover:text-red-600 hover:scale-125"
-              title={`Deletar: ${job}`}
-            />
-          </button>
-        )}
+        {id && <ButtomDeleteCard id={id} job={job} />}
       </div>
     </div>
   );
