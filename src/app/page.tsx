@@ -15,6 +15,8 @@ export default function Home() {
     queryFn: getAllUserServices,
   });
 
+  console.log(data);
+
   return (
     <>
       <Navbar />

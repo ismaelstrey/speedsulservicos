@@ -8,7 +8,7 @@ interface Props {
 export default function ListServices({ services }: Props) {
   return (
     <div className="flex gap-4 flex-wrap justify-center">
-      {services.map((user, key) => (
+      {services?.map((user, key) => (
         <Card
           id={user.id}
           image={user.image}

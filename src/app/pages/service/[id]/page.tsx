@@ -11,7 +11,7 @@ export default function PageSevice({ params }: { params: { id: number } }) {
   const { id } = params;
   const router = useRouter();
   const { isLoading, data } = useQuery({
-    queryKey: ["services"],
+    queryKey: ["service"],
     queryFn: () => findOneService(id).then((res) => res),
   });
   if (isLoading) return "Loading...";
