@@ -1,3 +1,4 @@
+import { JobListing } from "@/@types/services";
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
@@ -34,15 +35,17 @@ export async function PATCH(
   request: Request,
   { params }: { params: { id: number } }
 ) {
-  const { id } = params;
-  const dataService = await request.json();
+  const dataService: JobListing = await request.json();
+  const { id, ...newData } = dataService;
+
   try {
     const data = await prisma.service.update({
       where: {
-        id: Number(id),
+        id: Number(params.id),
       },
+      //@ts-ignore
       data: {
-        ...dataService,
+        ...newData,
       },
     });
     return NextResponse.json(data);

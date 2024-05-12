@@ -1,13 +1,11 @@
 import { JobListing } from "@/@types/services";
-import { deleteService, updateServiceRate } from "@/services/apiUserServices";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { FaTrash } from "react-icons/fa";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import ButtomDeleteCard from "./_buttom";
 import StarsRate from "../stars";
+import { BiEdit } from "react-icons/bi";
 
 export default function Card({
   image = "/images/eletricista.jpg",
@@ -17,15 +15,7 @@ export default function Card({
   rate = 4,
   type = "start",
   id,
-  handleSet,
 }: JobListing) {
-  // const queryClient = useQueryClient();
-  // const mutation = useMutation({
-  //   mutationFn: updateServiceRate,
-  //   onSuccess: () => {
-  //     queryClient.refetchQueries();
-  //   },
-  // });
   const router = useRouter();
   return (
     <div className="card w-96 bg-base-100 shadow-xl rounded-lg hover:scale-105 hover:border border-slate-400 transition ease-in-out delay-150">
@@ -62,6 +52,11 @@ export default function Card({
           ))}
         </div>
         {id && <ButtomDeleteCard id={id} job={job} />}
+        {id && (
+          <Link href={`/pages/service/cadastro/${id}`}>
+            <BiEdit />
+          </Link>
+        )}
       </div>
     </div>
   );

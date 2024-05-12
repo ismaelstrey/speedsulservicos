@@ -1,10 +1,5 @@
 "use client";
-import React, {
-  ChangeEvent,
-  FormEvent,
-  TextareaHTMLAttributes,
-  useState,
-} from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { FaCity, FaIcons, FaLink, FaSave } from "react-icons/fa";
 import { FiAlignCenter } from "react-icons/fi";
 import { GiAxeInStump } from "react-icons/gi";
@@ -13,25 +8,16 @@ import { FaArrowRightToCity } from "react-icons/fa6";
 import { MdCancel, MdOutlineAddRoad } from "react-icons/md";
 import { AiOutlineFieldNumber } from "react-icons/ai";
 import { JobListing } from "@/@types/services";
-import { addServices } from "@/services/apiUserServices";
+import { addServices, updateService } from "@/services/apiUserServices";
+import { GoNumber } from "react-icons/go";
+import { useRouter } from "next/navigation";
 
-export default function CardastroService() {
-  const defaultValueFormaData = {
-    title: "Informática",
-    subtitle: "Profissional liberal autonômo",
-    description:
-      "Trabalho com fardware, resdes , notebooks empressoaras e perifericos",
-    job: "Tecnico de Informática",
-    link: "http://google.com.br",
-    image: "/images/dev8.svg",
-    icon: "/icon/tech.svg",
-    city: "Igrejinha",
-    bairro: "Centro",
-    address: "Rua Tristão Monteiro",
-    number: "405",
-  };
+interface Props {
+  service?: JobListing;
+}
+export default function UpdateService({ service }: Props) {
   const [formData, setFormData] = useState<JobListing>({
-    ...defaultValueFormaData,
+    ...service,
   });
 
   const [loading, setLoading] = useState<Boolean>(false);
@@ -53,13 +39,17 @@ export default function CardastroService() {
     e.preventDefault();
     // Aqui você pode fazer o que quiser com os dados do formulário,
     setLoading(true);
-    addServices(formData).then(() => {
+
+    updateService(formData).then((data) => {
       setLoading(false);
-      setFormData({ ...defaultValueFormaData });
+      setFormData({ ...data });
+      console.log(data);
     });
     // como salvar em um array ou enviar para um servidor.
     console.log(formData);
   };
+
+  const router = useRouter();
 
   return (
     <div className="m-auto flex container flex-col gap-3 items-center justify-center flex-1 w-full">
@@ -68,6 +58,18 @@ export default function CardastroService() {
       )}
       <form onSubmit={handleSubmit} className="flex flex-col w-full gap-3">
         {" "}
+        <label className="input input-bordered w-full flex items-center gap-2">
+          <GoNumber /> #
+          <input
+            type="text"
+            className="grow"
+            name="id"
+            value={formData.id}
+            onChange={handleChange}
+            placeholder="Id"
+            disabled
+          />
+        </label>
         <label className="input input-bordered w-full flex items-center gap-2">
           <FiAlignCenter />
           <input
@@ -191,13 +193,15 @@ export default function CardastroService() {
         </label>
         <div className="flex w-full mt-4 justify-end gap-4 mr-4">
           <label className="input input-bordered flex items-center gap-2">
-            <MdCancel />
-            <button className="">Cancelar</button>
+            <MdCancel className="fill-error" />
+            <button onClick={() => router.back()} className="">
+              Cancelar
+            </button>
           </label>
           <label className="input input-bordered flex items-center gap-2">
-            <FaSave />
+            <FaSave className="fill-green-400" />
             <button className="" type="submit">
-              Salvar
+              Atualizar
             </button>
           </label>
         </div>
@@ -205,20 +209,3 @@ export default function CardastroService() {
     </div>
   );
 }
-
-// w-60 btn-warning bg-warning p-4 rounded-md mr-5
-// "title": "Manutenção de computadores",
-// "subtitle": "Realizo todo o trabalho de manutenção de computares para seu estabelecimento",
-// "description": "Trabalho com fardware, resdes , notebooks empressoaras e perifericos",
-// "job": "Tecnico de informatica",
-// "status": true,
-// "views": 5,
-// "link": "https://google.com",
-// "image": "/image/banner.svg",
-// "icon ": "/image/icon.svg",
-// "rate": "5",
-// "city": "Igrejinha",
-// "bairro": "centro",
-// "address": "Rua joaquim silva",
-// "obs": "Predio segundo piso",
-// "number": "12",

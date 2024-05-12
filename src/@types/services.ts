@@ -17,5 +17,4 @@ export interface JobListing {
   rate?: number;
   skils?: string[];
   type?: string;
-  handleSet?: () => void;
 }

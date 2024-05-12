@@ -29,11 +29,22 @@ interface PropsService {
   rate: number;
   id: number;
 }
+interface PropsServiceUpdate {
+  service: JobListing;
+}
 export const updateServiceRate = async ({
   id,
   rate,
 }: PropsService): Promise<JobListing> => {
   const dataService = { rate: rate };
   const response = await axios.patch(`/api/services/${id}`, dataService);
+  return response.data;
+};
+export const updateService = async (
+  service: JobListing
+): Promise<JobListing> => {
+  const { id } = service;
+  console.log(service);
+  const response = await axios.patch(`/api/services/${id}`, service);
   return response.data;
 };
