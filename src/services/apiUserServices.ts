@@ -6,6 +6,11 @@ export const getAllUserServices = async (): Promise<JobListing[]> => {
 
   return respData.data;
 };
+export const findOneService = async (id: number): Promise<JobListing> => {
+  let respData = await axios.get(`/api/services/${id}`);
+
+  return respData.data;
+};
 export const getTotalServices = async (): Promise<number> => {
   let respData = await axios.get("/api/services/total");
   return respData.data;
@@ -28,7 +33,7 @@ export const updateServiceRate = async ({
   id,
   rate,
 }: PropsService): Promise<JobListing> => {
-  const dataService = { rate: rate }
+  const dataService = { rate: rate };
   const response = await axios.patch(`/api/services/${id}`, dataService);
   return response.data;
 };

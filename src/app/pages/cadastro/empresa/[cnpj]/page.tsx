@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { cnpj: string } }) {
 
   useEffect(() => {
     getApiCnpj(id).then((res) => setEmpresa(res));
-  });
+  }, [id]);
   const router = useRouter();
 
   return (

@@ -6,31 +6,22 @@ import Hero from "@/components/hero";
 import ListServices from "@/components/listServices";
 import Loading from "@/components/loading";
 import Navbar from "@/components/navbar";
-import {
-  getAllUserServices,
-  getTotalServices,
-} from "@/services/apiUserServices";
+import { getAllUserServices } from "@/services/apiUserServices";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [contServices, setCountServices] = useState<number>(0);
-
   const { data, isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: getAllUserServices,
   });
 
-  useEffect(() => {
-    getTotalServices().then((res) => setCountServices(res));
-  }, []);
   return (
     <>
       <Navbar />
       <Hero />
-      <CountServices services={contServices} />
+      {data && <CountServices services={data?.length} />}
       {isLoading && <Loading valor={5} />}
-      {data && <ListServices services={data} />}
+      {data && !isLoading && <ListServices services={data} />}
       <Categories />
       {/* <ListServices /> */}
       <Footer />

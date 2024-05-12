@@ -28,6 +28,8 @@ export async function POST(request: Request) {
   });
   return NextResponse.json({ data });
 }
+
+//Atualiza um serviço com base no ID
 export async function PATCH(
   request: Request,
   { params }: { params: { id: number } }
@@ -38,9 +40,10 @@ export async function PATCH(
     const data = await prisma.service.update({
       where: {
         id: Number(id),
-      }, data: {
-        ...dataService
-      }
+      },
+      data: {
+        ...dataService,
+      },
     });
     return NextResponse.json(data);
   } catch (error) {
@@ -48,3 +51,21 @@ export async function PATCH(
     return NextResponse.json(error);
   }
 }
+//fim
+
+//Retorna um serviço com base no ID
+export async function GET(
+  request: Request,
+  { params }: { params: { id: number } }
+) {
+  const { id } = params;
+  try {
+    const data = await prisma.service.findFirst({ where: { id: Number(id) } });
+    console.log(data);
+    return NextResponse.json(data);
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(error);
+  }
+}
+//fim

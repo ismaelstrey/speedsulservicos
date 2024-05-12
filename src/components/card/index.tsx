@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { FaTrash } from "react-icons/fa";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import ButtomDeleteCard from "./_buttom";
-
+import StarsRate from "../stars";
 
 export default function Card({
   image = "/images/eletricista.jpg",
@@ -19,16 +19,16 @@ export default function Card({
   id,
   handleSet,
 }: JobListing) {
-
-  const queryClient = useQueryClient();
-  const mutation = useMutation({
-    mutationFn: updateServiceRate, onSuccess: () => {
-      queryClient.refetchQueries();
-    }
-  });
+  // const queryClient = useQueryClient();
+  // const mutation = useMutation({
+  //   mutationFn: updateServiceRate,
+  //   onSuccess: () => {
+  //     queryClient.refetchQueries();
+  //   },
+  // });
   const router = useRouter();
   return (
-    <div className="card w-96 bg-base-100 shadow-xl hover:cursor-pointer rounded-lg hover:scale-105 hover:border border-slate-400 transition ease-in-out delay-150">
+    <div className="card w-96 bg-base-100 shadow-xl rounded-lg hover:scale-105 hover:border border-slate-400 transition ease-in-out delay-150">
       <figure>
         <Image
           src={image}
@@ -43,39 +43,7 @@ export default function Card({
 
       <div className="card-body bg-base-100 rounded-b-lg">
         <div className="flex justify-end">
-          <div className="rating">
-            <span className="bg-orange-400"></span>
-            <input
-              type="radio"
-              name="rating-2"
-              onClick={() => mutation.mutate({ id: id || 0, rate: 1 })}
-              className={`mask mask-star-2 ${rate >= 1 && "bg-orange-400"}`}
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              onClick={() => mutation.mutate({ id: id || 0, rate: 2 })}
-              className={`mask mask-star-2 ${rate >= 2 && "bg-orange-400"}`}
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              onClick={() => mutation.mutate({ id: id || 0, rate: 3 })}
-              className={`mask mask-star-2 ${rate >= 3 && "bg-orange-400"}`}
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              onClick={() => mutation.mutate({ id: id || 0, rate: 4 })}
-              className={`mask mask-star-2 ${rate >= 4 && "bg-orange-400"}`}
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              onClick={() => mutation.mutate({ id: id || 0, rate: 5 })}
-              className={`mask mask-star-2 ${rate >= 5 && "bg-orange-400"}`}
-            />
-          </div>
+          {id && <StarsRate rate={rate} id={id} />}
         </div>
         <h2 className="card-title">
           <Link href={`pages/service/${id}`}> {job}</Link>
