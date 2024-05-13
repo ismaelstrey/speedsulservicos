@@ -37,11 +37,7 @@ export default function Card({
         </div>
         <h2 className="card-title">
           <Link href={`pages/service/${id}`}> {job}</Link>
-          {type && (
-            <div className="badge badge-secondary">
-              {type}-{rate}
-            </div>
-          )}
+          {type && <div className="badge badge-secondary">{type}</div>}
         </h2>
         <p>{description}</p>
         <div className="card-actions justify-end">
@@ -51,12 +47,17 @@ export default function Card({
             </div>
           ))}
         </div>
-        {id && <ButtomDeleteCard id={id} job={job} />}
-        {id && (
-          <Link href={`/pages/service/cadastro/${id}`}>
-            <BiEdit />
-          </Link>
-        )}
+        <div className="flex gap-3">
+          {id && <ButtomDeleteCard id={id} job={job} />}
+          {id && (
+            <Link
+              href={`/pages/service/cadastro/${id}`}
+              title={`Editar ${job}`}
+            >
+              <BiEdit className="hover:fill-blue-500 hover:text-blue-500 hover:scale-125" />
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
