@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "SpeedSul",
   keywords: "serviços, profissionais autônomos, pintura, pedreiria, carpintaria, eletricidade, pequenos negócios",
   description: "Conectamos clientes a uma variedade de profissionais autônomos especializados em serviços como pintura, pedreiria, carpintaria, eletricidade e muito mais. Encontre os melhores profissionais para suas necessidades de casa ou negócio.",
+  robots: "index, follow",
+  authors: {
+    name: "Ismael Strey Pereira",
+    url: "https://strey.com.br"
+  }
 };
 
 export default function RootLayout({
