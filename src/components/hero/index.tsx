@@ -1,22 +1,19 @@
 import { JobListing } from "@/@types/services";
 import { getAllUserServices } from "@/services/apiUserServices";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 
 export default function Hero() {
   const queryClient = useQueryClient();
-
   const mutation = useMutation({
     mutationFn: async (titleSearch: string) => {
       const services = (await getAllUserServices()).filter(
         (res: JobListing) => {
           const { title } = res;
-
           console.log(title, titleSearch);
           return title?.toLocaleLowerCase().includes(titleSearch.toLowerCase());
         }
       );
-
       queryClient.setQueryData<JobListing[]>(["services"], services);
     },
   });
