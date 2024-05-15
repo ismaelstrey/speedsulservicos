@@ -1,6 +1,25 @@
+import { JobListing } from "@/@types/services";
+import { getAllUserServices } from "@/services/apiUserServices";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 
 export default function Hero() {
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: async (titleSearch: string) => {
+      const services = (await getAllUserServices()).filter(
+        (res: JobListing) => {
+          const { title } = res;
+
+          console.log(title, titleSearch);
+          return title?.toLocaleLowerCase().includes(titleSearch.toLowerCase());
+        }
+      );
+
+      queryClient.setQueryData<JobListing[]>(["services"], services);
+    },
+  });
   return (
     <div
       className="hero min-h-4.5 md:min-h-screen h-h10 sm:h-3/4 bg-base-100 mt-16 bg-hero bg-cover"
@@ -15,7 +34,14 @@ export default function Hero() {
           </h1>
           <p className="mb-5"></p>
           <label className="input input-bordered flex items-center gap-2">
-            <input type="text" className="grow" placeholder="Ex: Eletricista" />
+            <input
+              type="text"
+              className="grow"
+              id="search"
+              name="search"
+              placeholder="Ex: Eletricista"
+              onChange={(e) => mutation.mutate(e.target.value)}
+            />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
