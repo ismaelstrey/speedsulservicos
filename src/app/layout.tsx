@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <script async src="https://apps-ackee.xlwycb.easypanel.host/tracker.js" data-ackee-server="https://apps-ackee.xlwycb.easypanel.host" data-ackee-domain-id="7420864f-16d3-44ac-99d7-582cd4348345"></script>
       <body className={inter.className}>
         <Main>{children}</Main>
       </body>
