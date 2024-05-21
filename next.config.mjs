@@ -4,13 +4,13 @@ const nextConfig = {
         return [
             {
                 // matching all API routes
-                source: "/api/:path*",
+                source: "/:path*",
                 headers: [
                     // omitted for brevity...
                 ]
             },
             {
-                source: "/api/special-data",
+                source: "/special-data",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "false" },
                     { key: "Access-Control-Allow-Origin", value: "https://ackee.speedsul.pro" },
